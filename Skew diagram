@@ -1,0 +1,28 @@
+Genome = "AGCGTGCCGAAATATGCCGCCAGACCTGCTGCGGTGGCCTCGCCGACTTCACGGATGCCAAGTGCATAGAGGAAGCGAGCAAAGGTGGTTTCTTTCGCTTTATCCAGCGCGTTAACCACGTTCTGTGCCGACTTT"
+# Output: A list containing all integers i minimizing Skew(Prefix_i(Text)) over all values of i (from 0 to |Genome|)
+def MinimumSkew(Genome):
+    positions = [] # output variable
+    # your code here
+    skew = SkewArray(Genome)
+    minimum = min(skew)
+    for i in range(len(skew)):
+        if skew[i] == minimum:
+            positions.append(i)
+    
+    return positions
+
+# Input:  A String Genome
+# Output: SkewArray(Genome)
+# HINT:   This code should be taken from the last Code Challenge.
+def SkewArray(Genome):
+    skew = {} # output variable
+    # your code here
+    skew = [0]
+    for i in range(len(Genome)):
+        if Genome[i] == 'C':
+            skew.append(skew[i] -1) 
+        elif Genome[i] == 'G':
+            skew.append(skew[i] + 1)
+        else:
+            skew.append(skew[i])
+    return skew
