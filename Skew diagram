@@ -1,5 +1,6 @@
 Genome = "AGCGTGCCGAAATATGCCGCCAGACCTGCTGCGGTGGCCTCGCCGACTTCACGGATGCCAAGTGCATAGAGGAAGCGAGCAAAGGTGGTTTCTTTCGCTTTATCCAGCGCGTTAACCACGTTCTGTGCCGACTTT"
 # Output: A list containing all integers i minimizing Skew(Prefix_i(Text)) over all values of i (from 0 to |Genome|)
+
 def MinimumSkew(Genome):
     positions = [] # output variable
     # your code here
@@ -13,7 +14,6 @@ def MinimumSkew(Genome):
 
 # Input:  A String Genome
 # Output: SkewArray(Genome)
-# HINT:   This code should be taken from the last Code Challenge.
 def SkewArray(Genome):
     skew = {} # output variable
     # your code here
